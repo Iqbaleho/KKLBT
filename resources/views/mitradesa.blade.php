@@ -129,7 +129,7 @@
         <div class="view" id="sig">
             <section class="hero">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a href="#mitra">Mitra
+                    <nav class="crumb" aria-label="Breadcrumb"><a href="{{ route('beranda') }}">Beranda</a> / <a href="#mitra">Mitra
                             Desa</a> / <span>SIG</span></nav>
                     <span class="eyebrow">Peminatan 01</span>
                     <h1>Sistem Informasi Geografis</h1>
@@ -228,7 +228,7 @@
         <div class="view" id="lmb">
             <section class="hero">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a href="#mitra">Mitra
+                    <nav class="crumb" aria-label="Breadcrumb"><a href="{{ route('beranda') }}">Beranda</a> / <a href="#mitra">Mitra
                             Desa</a> / <span>LMB</span></nav>
                     <span class="eyebrow">Peminatan 02</span>
                     <h1>Lingkungan &amp; Mitigasi Bencana</h1>
@@ -327,7 +327,7 @@
         <div class="view" id="ppw">
             <section class="hero">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a href="#mitra">Mitra
+                    <nav class="crumb" aria-label="Breadcrumb"><a href="{{ route('beranda') }}">Beranda</a> / <a href="#mitra">Mitra
                             Desa</a> / <span>PPW</span></nav>
                     <span class="eyebrow">Peminatan 03</span>
                     <h1>Perencanaan Pengembangan Wilayah</h1>

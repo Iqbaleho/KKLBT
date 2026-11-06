@@ -88,7 +88,7 @@
         <div class="view" id="demografi">
             <section class="hero">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a
+                    <nav class="crumb" aria-label="Breadcrumb"><a href="{{ route('beranda') }}">Beranda</a> / <a
                             href="#informasi">Informasi Desa</a> / <span>Demografi</span></nav>
                     <span class="eyebrow">Informasi Desa</span>
                     <h1>Demografi Penduduk</h1>
@@ -244,7 +244,7 @@
         <div class="view" id="wisata">
             <section class="hero" style="padding-bottom:48px">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a
+                    <nav class="crumb" aria-label="Breadcrumb"><a href="{{ route('beranda') }}">Beranda</a> / <a
                             href="#informasi">Informasi Desa</a> / <span>Wisata</span></nav>
                     <span class="eyebrow">Informasi Desa</span>
                     <h1>Wisata Desa Alat</h1>
