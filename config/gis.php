@@ -14,10 +14,6 @@ return [
             'label' => 'Wilayah Perairan',
             'icon' => 'bi-water',
         ],
-        'lahan' => [
-            'label' => 'Penggunaan Lahan',
-            'icon' => 'bi-tree-fill',
-        ],
          'administrasi' => [
             'label' => 'Wilayah Administrasi',
             'icon' => 'bi-map-fill',
@@ -38,7 +34,6 @@ return [
         'transportasi' => ['label' => 'Prasarana Transportasi', 'group' => 'transportasi'],
         'administrasi' => ['label' => 'Wilayah Administrasi', 'group' => 'administrasi'],
         'sungai' => ['label' => 'Sungai', 'group' => 'perairan'],
-        'pl' => ['label' => 'Penggunaan Lahan', 'group' => 'lahan'],
         'sig' => ['label' => 'Sistem Informasi Geografis', 'group' => 'analisis'],
         'ppw' => ['label' => 'Perencanaan Pembangunan Wilayah', 'group' => 'analisis'],
         'lmb' => ['label' => 'Lingkungan Mitigasi Bencana', 'group' => 'analisis'],
@@ -227,6 +222,7 @@ return [
                 'fields' => [
                     'NAMOBJ' => 'Nama Sungai',
                     'REMARK' => 'Jenis Alur',
+                    'Panjang' => 'Panjang Sungai',
                 ],
             ],
         ],
@@ -243,6 +239,7 @@ return [
                 'title'  => 'Jalan',
                 'fields' => [
                     'REMARK' => 'Jalan Lokal',
+                    'Panjang' => 'Panjang Jalan',
                 ],
             ],
         ],
@@ -253,7 +250,7 @@ return [
             'geometry' => 'polygon',
             'rank'     => 'polygon',
             'file'     => 'Batas Desa.geojson',
-            'visible'  => true,
+            'visible'  => false,
             'style'    => ['color' => '#3ca22a', 'fill_opacity' => 0.4, 'width' => 2],
             'popup'    => [
                 'title'  => 'Batas',
@@ -290,9 +287,9 @@ return [
             'label'    => 'Kemiringan Lereng',
             'category' => 'sig',
             'geometry' => 'polygon',
-            'rank'     => 'polygon',
+            'rank'     => 'polygonLereng',
             'file'     => 'Lereng.geojson',
-            'visible'  => false,
+            'visible'  => true,
             'style'      => [
                 'color'        => 'from_geojson',
                 'fill_opacity' => 0.6,
@@ -301,10 +298,7 @@ return [
             'popup'    => [
                 'title'  => 'Kemiringan Lereng',
                 'fields' => [
-                    'Nilai' => 'Nilai Lereng',
-                    'Kelas' => 'Relief',
-                    'Klasifikasi' => 'Keterangan',
-                    'luas' => 'Luas Area',
+                    'Luas' => 'Luas Area',
                 ],
             ],
         ],
