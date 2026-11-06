@@ -69,9 +69,6 @@ let styleReady = false; // true setelah style peta selesai dimuat
 if (mapboxToken.startsWith("GANTI"))
     document.getElementById("tokenWarn").classList.remove("d-none");
 
-// Masukkan token Mapbox Anda di sini
-mapboxgl.accessToken = "pk.eyJ1IjoibXVoYW1tYWRzYXVxaSIsImEiOiJjbXY5dXVrcWcwNGNvMndwbTE0dGdyMGxjIn0.szN_LOmM8olDLwXRl6mfNw";
-
 const map = new mapboxgl.Map({
     container: "map",
     style: state.basemap,
