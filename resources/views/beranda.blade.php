@@ -2,40 +2,79 @@
 
 @section('section')
 
-  <section class="hero" style="
-    border: 0;
+
+<section class="hero" style="
     position: relative;
-    background-image:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('{{ asset('img/Galeri/elsa.jpeg') }}');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
     color: #fff;
 ">
-        <div class="wrap"><span class="eyebrow">DISCOVER DESA ALAT</span>
-            <p>Where </p>
-            <h1> Selamat Datang Website Resmi Desa Alat </h1>
-            <p>Jelajahi karakter, potensi, budaya, dan masa depan Desa Alat melalui satu pengalaman digital yang
-                terintegrasi.</p>
-            <div class="btns"><a class="btn fill" href="#">Jelajahi Desa</a><a class="btn" href="webGIS">Buka WebGIS</a>
-            </div>
-            <div class="scroll"></div>
-        </div>
-    </section>
-    <section>
+
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    ">
+        <source src="{{ asset('mov/vid.mp4') }}" type="video/mp4">
+        Browser Anda tidak mendukung pemutaran video.
+    </video>
+
+    <!-- Overlay Gelap -->
+    <div style="
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1;
+    "></div>
+
+    <!-- Konten Hero -->
+    <div style="
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 30px;
+    ">
+        <h1>Selamat Datang di Desa Alat</h1>
+        <p>
+            Website Resmi Pemerintah Desa Alat,
+            Kecamatan Hantakan, Kabupaten Hulu Sungai Tengah.
+        </p>
+
+        <a href="#profil" style="
+            display: inline-block; margin-top: 20px;
+            padding: 12px 25px;
+            background: #198754;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        ">
+            Jelajahi Desa
+        </a>
+    </div>
+
+</section>
+
+    <section id="profil">
         <div class="wrap split reveal">
             <div><span class="eyebrow">Introduction</span>
                 <h2>Mengenal Desa Alat</h2>
-                <p style="text-align: justify;">Desa Alat merupakan salah satu desa yang berada di Kecamatan Hantakan, Kabupaten Hulu Sungai Tengah, Provinsi Kalimantan Selatan. Desa ini memiliki karakteristik wilayah dan kehidupan masyarakat yang menjadi bagian dari kekayaan sosial, budaya, serta potensi daerah di Kecamatan Hantakan.
+                <p style="text-align: justify; color: #fff;">
+                    Desa Alat merupakan salah satu desa yang berada di Kecamatan Hantakan, Kabupaten Hulu Sungai Tengah, Provinsi Kalimantan Selatan. Desa ini memiliki karakteristik wilayah dan kehidupan masyarakat yang menjadi bagian dari kekayaan sosial, budaya, serta potensi daerah di Kecamatan Hantakan.
 
 Website resmi Desa Alat ini dikembangkan sebagai sarana informasi dan komunikasi antara pemerintah desa dengan masyarakat. Melalui website ini, masyarakat dapat memperoleh berbagai informasi mengenai profil desa, pemerintahan, potensi wilayah, kegiatan masyarakat, serta informasi pelayanan publik. Kehadiran website ini diharapkan dapat mendukung keterbukaan informasi, meningkatkan kualitas pelayanan, dan memperkenalkan Desa Alat kepada masyarakat luas.</p>
             </div>
             <div class="card">
-                <div class="ph" style="aspect-ratio:4/3">[Foto panorama desa]</div>
+                <div class="ph" >
+                   <img src="{{ asset("img/Galeri/Kades.webp") }}" alt="">
+                </div>
             </div>
         </div>
     </section>
@@ -58,7 +97,8 @@ Website resmi Desa Alat ini dikembangkan sebagai sarana informasi dan komunikasi
             </div>
             <div><span class="eyebrow">Sambutan Kepala Desa</span>
                 <h2>FAQIH ZARJANI</h2>
-                <p style="text-align: justify;">Assalamu’alaikum warahmatullahi wabarakatuh.
+                <p style="text-align: justify; color: #fff;">
+                    Assalamu’alaikum warahmatullahi wabarakatuh.
                     Salam sejahtera bagi kita semua.
 
                     Saya, FAQIH ZARJANI, mengucapkan salam hangat kepada seluruh warga Desa Alat. Semoga desa ini semakin maju, masyarakatnya sejahtera, dan selalu menjaga kerukunan serta semangat gotong royong.
@@ -70,7 +110,7 @@ Website resmi Desa Alat ini dikembangkan sebagai sarana informasi dan komunikasi
                     Wassalamu’alaikum warahmatullahi wabarakatuh.
                 </p>
                     <br>
-                    <a class="btn" style="color:var(--emerald)" href="#">Profil Desa</a>
+                    <a class="btn" style="color:var(--gold)" href="#">Profil Desa</a>
             </div>
         </div>
     </section>

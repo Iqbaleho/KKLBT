@@ -25,7 +25,8 @@
             color: var(--ink);
             background: var(--ivory);
             line-height: 1.7;
-            overflow-x: hidden
+            overflow-x: hidden;
+            background: var(--ink);
         }
 
         img {
@@ -44,7 +45,7 @@
             font-family: var(--serif);
             font-weight: 400;
             line-height: 1.15;
-            color: var(--emerald)
+            color: var(--white)
         }
 
         h1 {
@@ -215,7 +216,7 @@
             text-transform: uppercase;
             transition: .3s;
             display: inline-block;
-            background: none;
+            background: #123D32 ;
             cursor: pointer
         }
 
@@ -272,7 +273,7 @@
 
         .card .ph {
             aspect-ratio: 12/8;
-            background: var(--sage) center/cover;
+            background: var(--ink) center/cover;
             display: grid;
             place-items: center;
             color: var(--emerald);
@@ -305,7 +306,7 @@
         .stats b {
             font-family: var(--serif);
             font-size: 1.5rem;
-            color: var(--emerald);
+            color: #fff;
             font-weight: 400;
             display: block
         }
