@@ -194,3 +194,56 @@ body{
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}
 }
+
+/* =====================================================
+   KOTAK KONTROL 3D & HILLSHADE (SERASI DENGAN GIS-TOOL)
+   ===================================================== */
+.gis-card-box {
+  padding: 10px 12px;
+  border: 1px solid var(--gis-line, var(--line));
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease;
+}
+
+.gis-card-box:hover {
+  border-color: var(--gis-accent, var(--river));
+}
+
+/* Tombol judul di dalam kotak 3D */
+.gis-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--gis-accent, var(--river));
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 2px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.gis-card-header.active {
+  color: var(--gis-ink, var(--ink));
+  font-weight: 600;
+}
+
+/* Garis pembatas horizontal di dalam kotak */
+.gis-card-box .border-top {
+  border-top: 1px solid var(--gis-line, var(--line)) !important;
+}
+
+/* Penyesuaian Slider agar rapi */
+.gis-card-box .range input[type="range"] {
+  margin-top: 4px;
+}
+
+/* Memastikan garis pemisah horizontal di dalam kotak selalu tampil jelas */
+.gis-tool .border-top {
+  border-top: 1px solid #d5e0e4 !important;
+}

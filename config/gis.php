@@ -250,7 +250,7 @@ return [
             'geometry' => 'polygon',
             'rank'     => 'polygon',
             'file'     => 'Batas Desa.geojson',
-            'visible'  => false,
+            'visible'  => true,
             'style'    => ['color' => '#3ca22a', 'fill_opacity' => 0.4, 'width' => 2],
             'popup'    => [
                 'title'  => 'Batas',
@@ -287,7 +287,7 @@ return [
             'label'    => 'Kemiringan Lereng',
             'category' => 'sig',
             'geometry' => 'polygon',
-            'rank'     => 'polygonLereng',
+            'rank'     => 'polygon',
             'file'     => 'Lereng.geojson',
             'visible'  => true,
             'style'      => [
@@ -298,6 +298,8 @@ return [
             'popup'    => [
                 'title'  => 'Kemiringan Lereng',
                 'fields' => [
+                    'klasifikasi' => 'Relief',
+                    'KL_'=> 'Persen Lereng',
                     'Luas' => 'Luas Area',
                 ],
             ],
