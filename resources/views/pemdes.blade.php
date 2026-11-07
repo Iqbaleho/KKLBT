@@ -122,42 +122,42 @@
                             <div class="node">
                                 <div class="ph">
                                     <img src="{{ asset('img/Struktur/WAHYUDIN.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
-                                </div><b>WAHYUDIN</b><small>Kepala Dusun I</small>
+                                </div><b>WAHYUDIN</b><small>Ketua RT 01</small>
                             </div>
                         </div>
                         <div class="col">
                             <div class="node">
                                 <div class="ph">
                                     <img src="{{ asset('img/Struktur/KABERI.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
-                                </div><b>KABERI</b><small>Kepala Dusun II</small>
+                                </div><b>KABERI</b><small>Ketua RT 02</small>
                             </div>
                         </div>
                         <div class="col">
                             <div class="node">
                                 <div class="ph">
                                     <img src="{{ asset('img/Struktur/ABDUL_HAMIT.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
-                                </div><b>ABDUL HAMIT</b><small>Kepala Dusun III</small>
+                                </div><b>ABDUL HAMIT</b><small>Ketua RT 03</small>
                             </div>
                         </div>
                      <div class="col">
                             <div class="node">
                                 <div class="ph">
                                     <img src="{{ asset('img/Struktur/ABDUL_GAPAR.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
-                                </div><b>ABDUL GAPAR</b><small>Kepala Dusun IV</small>
+                                </div><b>ABDUL GAPAR</b><small>Ketua RT 04</small>
                             </div>
                         </div>
                         <div class="col">
                             <div class="node">
                                 <div class="ph">
                                     <img src="{{ asset('img/Struktur/KABERI.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
-                                </div><b>KABERI</b><small>Kepala Dusun V</small>
+                                </div><b>KABERI</b><small>Ketua RT 05</small>
                             </div>
                         </div>
                         <div class="col">
                             <div class="node">
                                 <div class="ph">
                                     <img src="{{ asset('img/Struktur/HUMAIDI.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
-                                </div><b>HUMAIDI</b><small>Kepala Dusun VI</small>
+                                </div><b>HUMAIDI</b><small>Ketua RT 06</small>
                             </div>
                         </div>
                     </div>
