@@ -81,7 +81,7 @@ return [
             'style'       => [
                 'type'      => 'bootstrap-icon',
                 'icon'      => 'bi-moon-stars-fill', // Ganti dengan class icon Bootstrap yang diinginkan (misal: bi-building-fill atau icon khusus)
-                'color'     => '#200bd9',            // Warna icon
+                'color'     => '#4b5563',            // Warna icon
                 'size'      => '24px',               // Ukuran icon
                 'bg_color'  => '#ffffff',            // Warna latar belakang pin (opsional, agar kontras)
             ],
@@ -109,7 +109,7 @@ return [
             'style'       => [
                 'type'      => 'bootstrap-icon',
                 'icon'      => 'bi-moon-stars-fill', // Ganti dengan class icon Bootstrap yang diinginkan (misal: bi-building-fill atau icon khusus)
-                'color'     => '#200bd9',            // Warna icon
+                'color'     => '#e63946',            // Warna icon
                 'size'      => '24px',               // Ukuran icon
                 'bg_color'  => '#ffffff',            // Warna latar belakang pin (opsional, agar kontras)
             ],
@@ -137,7 +137,7 @@ return [
             'style'       => [
                 'type'      => 'bootstrap-icon',
                 'icon'      => 'bi-moon-stars-fill', // Ganti dengan class icon Bootstrap yang diinginkan (misal: bi-building-fill atau icon khusus)
-                'color'     => '#200bd9',            // Warna icon
+                'color'     => '#0f766e',            // Warna icon
                 'size'      => '24px',               // Ukuran icon
                 'bg_color'  => '#ffffff',            // Warna latar belakang pin (opsional, agar kontras)
             ],
@@ -165,7 +165,7 @@ return [
             'style'       => [
                 'type'      => 'bootstrap-icon',
                 'icon'      => 'bi-moon-stars-fill', // Ganti dengan class icon Bootstrap yang diinginkan (misal: bi-building-fill atau icon khusus)
-                'color'     => '#200bd9',            // Warna icon
+                'color'     => '#7c3aed',            // Warna icon
                 'size'      => '24px',               // Ukuran icon
                 'bg_color'  => '#ffffff',            // Warna latar belakang pin (opsional, agar kontras)
             ],
@@ -193,7 +193,7 @@ return [
             'style'       => [
                 'type'      => 'bootstrap-icon',
                 'icon'      => 'bi-moon-stars-fill', // Ganti dengan class icon Bootstrap yang diinginkan (misal: bi-building-fill atau icon khusus)
-                'color'     => '#200bd9',            // Warna icon
+                'color'     => '#8b5a2b',            // Warna icon
                 'size'      => '24px',               // Ukuran icon
                 'bg_color'  => '#ffffff',            // Warna latar belakang pin (opsional, agar kontras)
             ],
@@ -260,6 +260,8 @@ return [
             ],
         ],
 
+                                            // Sistem Informasi Geografis
+
         'NDVI' => [
             'label'    => 'NDVI (INDEX VEGETASI)',
             'category' => 'sig',
@@ -289,7 +291,7 @@ return [
             'geometry' => 'polygon',
             'rank'     => 'polygon',
             'file'     => 'Lereng.geojson',
-            'visible'  => true,
+            'visible'  => false,
             'style'      => [
                 'color'        => 'from_geojson',
                 'fill_opacity' => 0.6,
@@ -304,5 +306,95 @@ return [
                 ],
             ],
         ],
+
+        'Ketinggi' => [
+            'label'    => 'Ketinggian',
+            'category' => 'sig',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'Ketinggian.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Ketinggian',
+                'fields' => [
+                    'ketinggian' => 'Beda Tinggi',
+                    'klasifikasi'=> 'Relief',
+                    'Luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
+         'Tutplah' => [
+            'label'    => 'Tutupan Lahan (supervised classification) 2020',
+            'category' => 'sig',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'Tuplah20.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Tutupan Lahan',
+                'fields' => [
+                    'Keterangan' => 'Keterangan',
+                    'Luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
+                 'RF' => [
+            'label'    => 'Random Forest',
+            'category' => 'sig',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'RF.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Tutupan Lahan',
+                'fields' => [
+                    'Keterangan' => 'Keterangan',
+                    'Luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
+                                            // Perencanaan Pembangunan Wilayah //
+
+            'PR' => [
+            'label'    => 'Pola Ruang',
+            'category' => 'ppw',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'Pola Ruang.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Pola Ruang',
+                'fields' => [
+                    'NAMOBJ' => 'Kawasan',
+                    'Luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
+
+                                            // Lingkungan Mitigasi Bencana //
     ],
 ];
