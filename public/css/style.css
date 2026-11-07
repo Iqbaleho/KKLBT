@@ -360,27 +360,46 @@
             gap: 1rem;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            padding-bottom: 1rem
+            padding-bottom: 1rem;
         }
 
         .gal figure {
             flex: 0 0 min(320px, 80%);
-            scroll-snap-align: start
+            scroll-snap-align: start;
+            margin: 0;
         }
 
-        .gal .ph {
+        /* Kerangka pembungkus gambar dengan aspek rasio 3/2 */
+        .gal-img-wrapper {
             aspect-ratio: 3/2;
             background: var(--sage);
-            transition: .3s
+            overflow: hidden;
+            border-radius: 8px; /* Opsional: membuat sudutnya sedikit melengkung rapi */
+            position: relative;
+            transition: .3s;
         }
 
-        .gal figure:hover .ph {
-            opacity: .8
+        /* Mengatur tag img agar memenuhi kerangka tanpa gepeng dan tanpa celah */
+        .gal-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .3s ease;
+        }
+
+        /* Efek hover pada gambar ketika figur didekati kursor */
+        .gal figure:hover .gal-img-wrapper {
+            opacity: .9;
+        }
+
+        .gal figure:hover .gal-img-wrapper img {
+            transform: scale(1.03); /* Efek zoom tipis saat di-hover */
         }
 
         .gal figcaption {
             font-size: .8rem;
-            padding-top: .4rem
+            padding-top: .4rem;
         }
 
         .org {
@@ -492,6 +511,107 @@
             margin-top: 1rem
         }
 
+        /* Styling Utama Section */
+        .potensi-section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e3dfd2;
+        }
+
+        .potensi-section .wrap {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .potensi-section .eyebrow {
+            font-size: .72rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .8rem;
+            display: block;
+        }
+
+        /* Grid Layout untuk Card */
+        .potensi-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        /* Kartu / Card Container */
+        .potensi-card {
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            flex: 0 1 320px;
+        }
+
+        /* Kerangka / Wrapper Gambar (Menjaga rasio dan ukuran tetap seragam) */
+        .potensi-img-wrapper {
+            width: 100%;
+            height: 200px; /* Atur tinggi kerangka gambar sesuai selera (misal: 200px) */
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0; /* Warna latar cadangan jika gambar lambat dimuat */
+        }
+
+        /* Pengaturan Tag <img> agar pas dengan kerangka tanpa gap */
+        .potensi-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Gambar akan menyesuaikan tanpa gepeng dan tanpa celah */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efek sedikit zoom saat kursor mendekati card (opsional) */
+        .potensi-card:hover .potensi-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        /* Bagian Konten Teks di dalam Card */
+        .potensi-card .in {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .potensi-card .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .potensi-card h3 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .potensi-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Efek Animasi Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: 1s;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
         @media(max-width:860px) {
             .split {
                 grid-template-columns: 1fr;
@@ -544,3 +664,55 @@
             }
         }
 
+.map-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 250px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f1f5f9;
+}
+
+.map-preview iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .map-preview {
+        aspect-ratio: 4 / 3;
+        min-height: 280px;
+        border-radius: 10px;
+    }
+}
+
+/* Smartphone */
+@media (max-width: 480px) {
+    .map-preview {
+        aspect-ratio: 1 / 1;
+        min-height: 250px;
+        border-radius: 8px;
+    }
+}
+
+.wisata-img-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Menjaga rasio kotak tetap proporsional (landscape) */
+    overflow: hidden;      /* Memotong gambar yang melebihi sudut border-radius */
+    background-color: #1f2937; /* Warna latar belakang cadangan jika gambar belum dimuat */
+}
+
+/* Tag gambar agar pas mengisi penuh kerangka */
+.wisata-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Memastikan gambar menutupi area kotak tanpa gepeng */
+    display: block;
+}

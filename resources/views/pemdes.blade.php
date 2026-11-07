@@ -2,8 +2,6 @@
 
 @section('section')
 
-
-
     <main>
         <section class="hero" style="padding-block:90px 70px">
             <div class="wrap">
@@ -29,7 +27,7 @@
         <section id="visi-misi" class="vm">
             <div class="wrap">
                 <span class="eyebrow">01 · Visi &amp; Misi</span>
-                <span class="period">Periode [2022 – 2028]</span>
+                <span class="period">Periode 2022 – 2028</span>
                 <blockquote class="vision" style="margin-inline:0">“MEMBANGUN TATA KELOLA PEMERINTAHAN YANG AMANAH, JUJUR DAN BERTANGGUNG JAWAB, DEMI TERWUJUDNYA MASYARAKAT SEJAHTERA”</blockquote>
                 <h2>Misi</h2>
                 <ol class="mis">
@@ -38,7 +36,7 @@
                     <li style="text-align: justify;"><b>03</b><span> Menjalin hubungan baik dengan tokoh masyarakat, Pemuda dan Tokoh Agama </span></li>
 
                 </ol>
-                <p class="note">Sumber: [RPJMDes / Perdes No. …, tahun …]. Isi dengan teks resmi, tanpa parafrase.</p>
+                <p class="note">Sumber: RPJMDes / Perdes No. …, tahun …. Isi dengan teks resmi, tanpa parafrase.</p>
             </div>
         </section>
 

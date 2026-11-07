@@ -227,7 +227,7 @@ return [
             ],
         ],
 
-                'Jalan' => [
+        'Jalan' => [
             'label'    => 'Jalan Desa',
             'category' => 'transportasi',
             'geometry' => 'line',
@@ -266,7 +266,7 @@ return [
             'geometry' => 'polygon',
             'rank'     => 'polygon',
             'file'     => 'NDVI.geojson',
-            'visible'  => false,
+            'visible'  => true,
             'style'      => [
                 'color'        => 'from_geojson',
                 'fill_opacity' => 0.6,
@@ -289,16 +289,17 @@ return [
             'geometry' => 'polygon',
             'rank'     => 'polygonLereng',
             'file'     => 'Lereng.geojson',
-            'visible'  => true,
+            'visible'  => false,
             'style'      => [
                 'color'        => 'from_geojson',
-                'fill_opacity' => 0.6,
+                'fill_opacity' => 0.7,
                 'width'        => 1
             ],
             'popup'    => [
                 'title'  => 'Kemiringan Lereng',
                 'fields' => [
-                    'Luas' => 'Luas Area',
+                    'klasifikasi' =>'Klasifikasi Lereng',
+                    'Luas' => 'Luas Keseluruhan',
                 ],
             ],
         ],

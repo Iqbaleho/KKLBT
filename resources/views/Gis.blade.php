@@ -20,7 +20,7 @@
   :root {
     --gis-ink: #12302f;
     --gis-muted: #587370;
-    --gis-rail: #c21711;
+    --gis-rail: #123D32;
     --gis-rail-ink: #d6e7e4;
     --gis-pane: #f4f7f6;
     --gis-line: #d3dedb;
@@ -257,6 +257,10 @@
   <aside class="gis-side" id="side" aria-label="Panel kontrol peta">
 
     <nav class="gis-rail" aria-label="Menu panel">
+      <button type="button" class="gis-rail-btn" data-action="collapse" title="Ciutkan atau buka panel" aria-label="Ciutkan atau buka panel">
+        <i class="bi bi-chevron-double-right"></i>
+      </button>
+
       <button type="button" class="gis-rail-btn active" data-tab="layer" title="Layer" aria-label="Layer">
         <i class="bi bi-layers-fill"></i>
       </button>
@@ -269,9 +273,13 @@
 
       <span class="gis-rail-spacer"></span>
 
-      <button type="button" class="gis-rail-btn" data-action="collapse" title="Ciutkan atau buka panel" aria-label="Ciutkan atau buka panel">
-        <i class="bi bi-chevron-double-left"></i>
-      </button>
+        <button type="button"
+                onclick="window.location.href='{{ route('beranda') }}'"
+                class="gis-rail-btn flex items-center justify-center my-auto"
+                title="Kembali ke Beranda"
+                aria-label="Kembali ke Beranda">
+            <i class="bi bi-house-door-fill"></i>
+        </button>
     </nav>
 
     <div class="gis-panes">

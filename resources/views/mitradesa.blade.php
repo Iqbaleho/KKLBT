@@ -40,10 +40,12 @@
                 <div class="wrap split">
                     <div><span class="eyebrow">Latar Belakang</span>
                         <h2>Mengapa KKL dilakukan di desa ini.</h2>
-                        <p style="text-align: justify;">[Kuliah Kerja Lapangan (KKL) dilaksanakan di Desa Alat, Kecamatan Hantakan, Kabupaten Hulu Sungai Tengah, untuk mengenal kondisi geografis, sosial, ekonomi, dan potensi wilayah desa secara langsung. Kegiatan ini menjadi sarana bagi mahasiswa untuk menerapkan ilmu yang diperoleh selama perkuliahan, melakukan observasi lapangan, serta mengidentifikasi potensi dan permasalahan desa. Melalui kegiatan KKL, diharapkan mahasiswa dapat memberikan kontribusi berupa informasi dan rekomendasi yang bermanfaat bagi pengembangan wilayah serta mendukung pembangunan desa yang berkelanjutan.]</p>
-                        <p><strong>Tujuan:</strong> [Tuliskan tujuan kegiatan sesuai laporan KKL.]</p>
+                        <p style="text-align: justify;">Kuliah Kerja Lapangan (KKL) dilaksanakan di Desa Alat, Kecamatan Hantakan, Kabupaten Hulu Sungai Tengah, untuk mengenal kondisi geografis, sosial, ekonomi, dan potensi wilayah desa secara langsung. Kegiatan ini menjadi sarana bagi mahasiswa untuk menerapkan ilmu yang diperoleh selama perkuliahan, melakukan observasi lapangan, serta mengidentifikasi potensi dan permasalahan desa. Melalui kegiatan KKL, diharapkan mahasiswa dapat memberikan kontribusi berupa informasi dan rekomendasi yang bermanfaat bagi pengembangan wilayah serta mendukung pembangunan desa yang berkelanjutan.</p>
+                        <p><strong>Tujuan:</strong> Tuliskan tujuan kegiatan sesuai laporan KKL.</p>
                     </div>
-                    <div class="ph" style="aspect-ratio:4/3">[Foto dokumentasi KKL]</div>
+                    <div class="ph">
+                        <img src="{{ asset('img/Background/S1.jpg') }}" alt="Foto Kegiatan KKL">
+                    </div>
                 </div>
             </section>
 
@@ -54,7 +56,9 @@
                     </div>
                     <div class="grid3">
                         <article class="card">
-                            <div class="ph">[Foto SIG]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <div class="in"><span class="num">01</span>
                                 <h3>Sistem Informasi Geografis</h3>
                                 <p>Data spasial, pemetaan tematik, dan analisis spasial.</p><a class="more"
@@ -63,20 +67,25 @@
                         </article>
                         <article class="card">
                             <div class="ph">
-                                <img src="{{ asset('img/Galeri/bardinment.jpeg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                                <img src="{{ asset('img/Background/S3.jpg') }}" alt="Foto LMB">
                             </div>
-                            <div class="in"><span class="num">02</span>
+                            <div class="in">
+                                <span class="num">02</span>
                                 <h3>Lingkungan &amp; Mitigasi Bencana</h3>
-                                <p>Kajian lingkungan, potensi, dan risiko bencana.</p><a class="more" href="#lmb">Buka
-                                    halaman LMB →</a>
+                                <p>Kajian lingkungan, potensi, dan risiko bencana.</p>
+                                <a class="more" href="#lmb">Buka halaman LMB →</a>
                             </div>
                         </article>
+
                         <article class="card">
-                            <div class="ph">[Foto PPW]</div>
-                            <div class="in"><span class="num">03</span>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S5.jpg') }}" alt="Foto LMB">
+                            </div>
+                            <div class="in">
+                                <span class="num">03</span>
                                 <h3>Perencanaan Pengembangan Wilayah</h3>
-                                <p>Potensi wilayah, infrastruktur, dan aksesibilitas.</p><a class="more"
-                                    href="#ppw">Buka halaman PPW →</a>
+                                <p>Potensi wilayah, infrastruktur, dan aksesibilitas.</p>
+                                <a class="more" href="#ppw">Buka halaman PPW →</a>
                             </div>
                         </article>
                     </div>
@@ -105,19 +114,27 @@
                     </div>
                     <div class="snap" tabindex="0" aria-label="Galeri kegiatan KKL">
                         <figure>
-                            <div class="ph">[Foto 1]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Kegiatan KKL">
+                            </div>
                             <figcaption>[Caption kegiatan 1]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 2]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Kegiatan KKL">
+                            </div>
                             <figcaption>[Caption kegiatan 2]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 3]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Kegiatan KKL">
+                            </div>
                             <figcaption>[Caption kegiatan 3]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 4]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Kegiatan KKL">
+                            </div>
                             <figcaption>[Caption kegiatan 4]</figcaption>
                         </figure>
                     </div>
@@ -129,14 +146,17 @@
         <div class="view" id="sig">
             <section class="hero">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a href="#mitra">Mitra
-                            Desa</a> / <span>SIG</span></nav>
+                    <nav class="crumb" aria-label="Breadcrumb">
+                        <a href="{{ route('beranda') }}">Beranda</a> /
+                        <a href="#mitra">Mitra Desa</a> / <span>SIG</span>
+                    </nav>
                     <span class="eyebrow">Peminatan 01</span>
-                    <h1>Sistem Informasi Geografis</h1>
+                    <h1>Sistem Informasi Geografi</h1>
                     <p>Pengumpulan data spasial, pemetaan tematik, dan analisis spasial Desa Alat.</p>
                     <a class="btn fill" href="{{ route('webGIS') }}">Lihat WebGIS</a>
                 </div>
             </section>
+
             <section>
                 <div class="wrap">
                     <div class="head"><span class="eyebrow">Alur Kerja Spasial</span>
@@ -146,25 +166,26 @@
                         <article class="card">
                             <div class="in"><span class="num">01</span>
                                 <h3>Pengumpulan data</h3>
-                                <p>[Survei GPS, citra, data sekunder]</p>
+                                <p>Survei GPS, citra, data sekunder</p>
                             </div>
                         </article>
+
                         <article class="card">
                             <div class="in"><span class="num">02</span>
                                 <h3>Pemetaan tematik</h3>
-                                <p>[Tema peta yang dibuat]</p>
+                                <p>Tema peta yang dibuat</p>
                             </div>
                         </article>
                         <article class="card">
                             <div class="in"><span class="num">03</span>
                                 <h3>Analisis spasial</h3>
-                                <p>[Metode analisis]</p>
+                                <p>Metode analisis</p>
                             </div>
                         </article>
                         <article class="card">
                             <div class="in"><span class="num">04</span>
                                 <h3>Penginderaan jauh</h3>
-                                <p>[Isi bila digunakan]</p>
+                                <p>Isi bila digunakan</p>
                             </div>
                         </article>
                     </div>
@@ -174,12 +195,16 @@
                 <div class="wrap split">
                     <div><span class="eyebrow">Peta Hasil Kajian</span>
                         <h2 style="color:#fff">Peta tematik desa.</h2>
-                        <p style="color:#d4d9cf">[Jelaskan peta yang dihasilkan, sumber data, sistem koordinat, dan
-                            tahun.] Jangan memasukkan batas atau koordinat perkiraan.</p>
+                        <p style="color:#d4d9cf">Jelaskan peta yang dihasilkan, sumber data, sistem koordinat, dan
+                            tahun.</p>
                     </div>
-                    <div class="ph" style="aspect-ratio:4/3">[Peta hasil kajian SIG]</div>
+                    <div class="ph" style="aspect-ratio:4/3">
+                        <img src="{{ asset('img/Background/S3.jpg') }}" alt="">
+                    </div>
                 </div>
             </section>
+
+
             <section>
                 <div class="wrap">
                     <div class="head"><span class="eyebrow">Dokumentasi</span>
@@ -187,20 +212,33 @@
                     </div>
                     <div class="snap" tabindex="0" aria-label="Dokumentasi SIG">
                         <figure>
-                            <div class="ph">[Foto 1]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S4.png') }}" alt="Dokumentasi Kegiatan SIG">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 2]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S4.png') }}" alt="Dokumentasi Kegiatan SIG">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 3]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S4.png') }}" alt="Dokumentasi Kegiatan SIG">
+                            </div>
+                            <figcaption>[Caption]</figcaption>
+                        </figure>
+                        <figure>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S4.png') }}" alt="Dokumentasi Kegiatan SIG">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                     </div>
                 </div>
             </section>
+
             <section class="alt">
                 <div class="wrap">
                     <div class="head"><span class="eyebrow">Pengembangan WebGIS</span>
@@ -208,13 +246,13 @@
                     </div>
                     <details open>
                         <summary>Status pengembangan</summary>
-                        <p>[Jelaskan tahap WebGIS saat ini.] Versi tanpa JavaScript berupa peta statis dan legenda;
+                        <p>Jelaskan tahap WebGIS saat ini. Versi tanpa JavaScript berupa peta statis dan legenda;
                             kontrol layer interaktif memerlukan JavaScript atau peta eksternal.</p>
                     </details>
                     <details>
                         <summary>Referensi</summary>
                         <ul>
-                            <li>[Penulis. Tahun. Judul. Penerbit.]</li>
+                            <li>Penulis. Tahun. Judul. Penerbit.</li>
                         </ul>
                     </details>
                 </div>
@@ -228,23 +266,29 @@
         <div class="view" id="lmb">
             <section class="hero">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a href="#mitra">Mitra
+                    <nav class="crumb" aria-label="Breadcrumb">
+                        <a href="{{ route('beranda') }}">Beranda</a> /
+                        <a href="#mitra">Mitra
                             Desa</a> / <span>LMB</span></nav>
                     <span class="eyebrow">Peminatan 02</span>
                     <h1>Lingkungan &amp; Mitigasi Bencana</h1>
                     <p>Kajian kondisi lingkungan serta potensi dan risiko bencana di Desa Alat.</p>
                 </div>
             </section>
+
             <section>
                 <div class="wrap split">
                     <div><span class="eyebrow">Ringkasan</span>
                         <h2>Kajian lingkungan.</h2>
-                        <p>[Ringkasan ruang lingkup kajian LMB: aspek lingkungan yang diamati dan jenis bencana yang
-                            dikaji.]</p>
+                        <p>Ringkasan ruang lingkup kajian LMB: aspek lingkungan yang diamati dan jenis bencana yang
+                            dikaji.</p>
                     </div>
-                    <div class="ph" style="aspect-ratio:4/3">[Foto observasi lapangan]</div>
+                    <div class="ph" style="aspect-ratio:4/3">
+                        <img src="{{ asset('img/Background/S3.jpg') }}" alt="">
+                    </div>
                 </div>
             </section>
+
             <section class="dark">
                 <div class="wrap">
                     <div class="head"><span class="eyebrow">Metodologi</span>
@@ -258,6 +302,7 @@
                     </ol>
                 </div>
             </section>
+
             <section>
                 <div class="wrap">
                     <div class="head"><span class="eyebrow">Dokumentasi &amp; Peta Pendukung</span>
@@ -265,30 +310,59 @@
                     </div>
                     <div class="snap" tabindex="0" aria-label="Dokumentasi LMB">
                         <figure>
-                            <div class="ph">[Foto 1]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Dokumentasi Kegiatan">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 2]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Dokumentasi Kegiatan">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 3]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Dokumentasi Kegiatan">
+                            </div>
+                            <figcaption>[Caption]</figcaption>
+                        </figure>
+                        figure>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S1.jpg') }}" alt="Dokumentasi Kegiatan">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                     </div>
                     <div class="maps" style="margin-top:34px">
                         <figure>
-                            <div class="ph">[Peta potensi bencana]</div>
-                            <figcaption>[Judul peta, sumber &amp; tahun data]</figcaption>
+                            <div class="ph">Peta potensi bencana
+                                <img src="{{ asset('img/Background/S3.jpg') }}" alt="Peta">
+                            </div>
+                            <figcaption>Judul peta, sumber &amp; tahun data</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Peta risiko]</div>
-                            <figcaption>[Judul peta, sumber &amp; tahun data]</figcaption>
+                            <div class="ph">Peta risiko
+                                <img src="{{ asset('img/Background/S3.jpg') }}" alt="Peta">
+                            </div>
+                            <figcaption>Judul peta, sumber &amp; tahun data</figcaption>
+                        </figure>
+                        <figure>
+                            <div class="ph">Peta potensi bencana
+                                <img src="{{ asset('img/Background/S3.jpg') }}" alt="Peta">
+                            </div>
+                            <figcaption>Judul peta, sumber &amp; tahun data</figcaption>
+                        </figure>
+                        <figure>
+                            <div class="ph">Peta risiko
+                                <img src="{{ asset('img/Background/S3.jpg') }}" alt="Peta">
+                            </div>
+                            <figcaption>Judul peta, sumber &amp; tahun data</figcaption>
                         </figure>
                     </div>
                 </div>
             </section>
+
             <section class="alt">
                 <div class="wrap">
                     <div class="head"><span class="eyebrow">Hasil &amp; Rekomendasi</span>
@@ -296,11 +370,11 @@
                     </div>
                     <details open>
                         <summary>Hasil kajian</summary>
-                        <p>[Ringkasan hasil kajian LMB — isi dengan data resmi laporan.]</p>
+                        <p>Ringkasan hasil kajian LMB — isi dengan data resmi laporan.</p>
                     </details>
                     <details>
                         <summary>Potensi &amp; risiko bencana</summary>
-                        <p>[Uraian potensi dan tingkat risiko berdasarkan hasil kajian.]</p>
+                        <p>Uraian potensi dan tingkat risiko berdasarkan hasil kajian.</p>
                     </details>
                     <details>
                         <summary>Rekomendasi</summary>
@@ -327,7 +401,7 @@
         <div class="view" id="ppw">
             <section class="hero">
                 <div class="wrap">
-                    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <a href="#mitra">Mitra
+                    <nav class="crumb" aria-label="Breadcrumb"><a href="{{ route('beranda') }}">Beranda</a> / <a href="#mitra">Mitra
                             Desa</a> / <span>PPW</span></nav>
                     <span class="eyebrow">Peminatan 03</span>
                     <h1>Perencanaan Pengembangan Wilayah</h1>
@@ -341,25 +415,25 @@
                     </div>
                     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
                         <article class="card">
-                            <div class="in"><span class="num">A</span>
+                            <div class="in"><span class="num">1</span>
                                 <h3>Potensi wilayah</h3>
                                 <p>[Uraian singkat]</p>
                             </div>
                         </article>
                         <article class="card">
-                            <div class="in"><span class="num">B</span>
+                            <div class="in"><span class="num">2</span>
                                 <h3>Infrastruktur</h3>
                                 <p>[Uraian singkat]</p>
                             </div>
                         </article>
                         <article class="card">
-                            <div class="in"><span class="num">C</span>
+                            <div class="in"><span class="num">3</span>
                                 <h3>Aksesibilitas</h3>
                                 <p>[Uraian singkat]</p>
                             </div>
                         </article>
                         <article class="card">
-                            <div class="in"><span class="num">D</span>
+                            <div class="in"><span class="num">4</span>
                                 <h3>Fasilitas umum</h3>
                                 <p>[Uraian singkat]</p>
                             </div>
@@ -369,7 +443,9 @@
             </section>
             <section>
                 <div class="wrap split">
-                    <div class="ph" style="aspect-ratio:4/3">[Foto survei lapangan]</div>
+                    <div class="ph" style="aspect-ratio:4/3">
+                        <img src="{{ asset('img/Background/S2.jfif') }}" alt="Dokumentasi Kegiatan">
+                    </div>
                     <div><span class="eyebrow">Metode Survei</span>
                         <h2>Cara data dikumpulkan.</h2>
                         <p>[Jelaskan metode: observasi, wawancara, kuesioner, jumlah responden, dan periode survei.]</p>
@@ -383,25 +459,35 @@
                     </div>
                     <div class="snap" tabindex="0" aria-label="Dokumentasi PPW">
                         <figure>
-                            <div class="ph">[Foto 1]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S2.jfif') }}" alt="Dokumentasi Kegiatan">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 2]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S2.jfif') }}" alt="Dokumentasi Kegiatan">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Foto 3]</div>
+                            <div class="ph">
+                                <img src="{{ asset('img/Background/S2.jfif') }}" alt="Dokumentasi Kegiatan">
+                            </div>
                             <figcaption>[Caption]</figcaption>
                         </figure>
                     </div>
                     <div class="maps" style="margin-top:34px">
                         <figure>
-                            <div class="ph">[Peta infrastruktur]</div>
+                            <div class="ph">[Peta infrastruktur]
+                                <img src="{{ asset('img/Background/S2.jfif') }}" alt="Peta">
+                            </div>
                             <figcaption>[Sumber &amp; tahun data]</figcaption>
                         </figure>
                         <figure>
-                            <div class="ph">[Peta aksesibilitas]</div>
+                            <div class="ph">[Peta aksesibilitas]
+                                <img src="{{ asset('img/Background/S2.jfif') }}" alt="Peta">
+                            </div>
                             <figcaption>[Sumber &amp; tahun data]</figcaption>
                         </figure>
                     </div>
