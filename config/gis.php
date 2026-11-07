@@ -350,6 +350,27 @@ return [
             ],
         ],
 
+        'TutupanLahan' => [
+            'label'    => 'Tutupan Lahan (supervised classification) 2025',
+            'category' => 'sig',
+            'geometry' => 'polygon',
+            'rank'     => 'polygon',
+            'file'     => 'Tuplah25.geojson',
+            'visible'  => false,
+            'style'      => [
+                'color'        => 'from_geojson',
+                'fill_opacity' => 0.6,
+                'width'        => 1
+            ],
+            'popup'    => [
+                'title'  => 'Tutupan Lahan',
+                'fields' => [
+                    'Keterangan' => 'Keterangan',
+                    'Luas' => 'Luas Area',
+                ],
+            ],
+        ],
+
                  'RF' => [
             'label'    => 'Random Forest',
             'category' => 'sig',
