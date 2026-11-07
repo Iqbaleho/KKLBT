@@ -15,6 +15,7 @@ const DEFAULT_COLOR = "#64748b";
 // Urutan tumpukan: poligon (bawah) < garis < titik (atas)
 const RANK = {
     polygon: 1,
+    polygonLereng: 3,
     lineSungai: 5,
     lineJalan: 10,
     point: 20
@@ -94,7 +95,9 @@ function buildLayerSpecs(id, def) {
 
     if (def.geometry === "polygon") {
 
-        const fillColor = (s.color === "from_geojson") ? ["get", "warna"] : color;
+        const fillColor = (s.color === "from_geojson")
+            ? ["to-color", ["get", "warna"], ["get", "color"], ["get", "fill"], DEFAULT_COLOR]
+                : color;
 
         return [
             {
@@ -202,7 +205,7 @@ function drawLayer(id, data) {
     if (!map.getSource(src)) map.addSource(src, { type: "geojson", data });
     buildLayerSpecs(id, def).forEach((spec) => {
         if (!map.getLayer(spec.id))
-            map.addLayer(spec, beforeIdFor(RANK[def.geometry]));
+            map.addLayer(spec, beforeIdFor(spec.metadata.gisRank));
     });
     applyLayerState(id);
 }
