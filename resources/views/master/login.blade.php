@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        <title>Masuk Sistem | Desa Alat</title>
+        <title>Login| Desa Alat</title>
         <link rel="icon" href="{{ asset('img/Logo/HST.png') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -39,8 +39,8 @@
                     @csrf
                     <div class="auth-header">
                         <img src="{{ asset('img/Logo/HST.png') }}" alt="Logo Kabupaten HST">
-                        <span class="eyebrow">Akses Sistem</span>
-                        <h1>Masuk Akun</h1>
+                        <span class="eyebrow">Dashboard Sistem</span>
+                        <h1>Login</h1>
                         <p>Silakan masuk menggunakan kredensial Anda.</p>
                     </div>
 
@@ -61,7 +61,7 @@
                         <a type="button" class="link-toggle" onclick="toggleForm('reset')">Lupa Sandi?</a>
                     </div>
 
-                    <button type="submit" class="btn-submit">Masuk Sistem</button>
+                    <button type="submit" class="btn-submit">Dashboard Sistem</button>
                 </form>
 
                 <!-- ===== FORM 2: LUPA PASSWORD ===== -->

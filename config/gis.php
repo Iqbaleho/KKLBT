@@ -327,7 +327,7 @@ return [
             ],
         ],
 
-                 'RF' => [
+        'RF' => [
             'label'    => 'Random Forest',
             'category' => 'sig',
             'geometry' => 'polygon',
@@ -350,7 +350,7 @@ return [
 
                                             // Perencanaan Pembangunan Wilayah //
 
-            'PR' => [
+        'PR' => [
             'label'    => 'Pola Ruang',
             'category' => 'ppw',
             'geometry' => 'polygon',
