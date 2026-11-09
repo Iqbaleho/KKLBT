@@ -75,6 +75,10 @@ const map = new mapboxgl.Map({
     style: state.basemap,
     ...INITIAL_VIEW,
 });
+
+map.dragRotate.enable();
+map.touchZoomRotate.enableRotation();
+
 map.addControl(
     new mapboxgl.NavigationControl({ visualizePitch: true }),
     CONTROL_POS,
@@ -285,13 +289,10 @@ function buildPopup(id, props) {
     const cfg = def.popup || {};
     const box = el("div", "gis-popup");
 
-    // 1. Render Gambar Dinamis Berdasarkan Nama Objek
+    // 1. Gambar Dinamis
     const img = cfg.image;
     if (img && props[img.field]) {
-        // Membersihkan string nama objek agar aman dijadikan nama file (mengubah spasi jadi _ atau huruf kecil jika diperlukan, atau biarkan apa adanya)
         const rawName = String(props[img.field]).trim();
-
-        // Membentuk nama file, misal: "CEMPAKA.png" atau menyesuaikan file fisik Anda
         const fileName = rawName + (img.ext || ".png");
         const url = img.base_url + "/" + encodeURI(fileName);
 
@@ -304,50 +305,56 @@ function buildPopup(id, props) {
         im.loading = "lazy";
         im.alt = rawName;
         im.src = url;
-        im.style.cssText =
-            "display:block;width:100%;max-height:140px;object-fit:cover;border-radius:6px;margin-bottom:8px";
-
-        // Jika file gambar tidak ditemukan di folder public, popup tidak akan error melainkan menyembunyikan elemen gambar secara otomatis
+        im.style.cssText = "display:block;width:100%;max-height:140px;object-fit:cover;border-radius:6px;margin-bottom:8px";
         im.onerror = () => a.remove();
 
         a.appendChild(im);
         box.appendChild(a);
     }
 
-    // 2. Judul Popup (Mengambil langsung dari label layer di config)
-    box.appendChild(
-        el("strong", "gis-popup-title mb-2 d-block", def.label)
-    );
+    // 2. Judul Popup
+    box.appendChild(el("strong", "gis-popup-title mb-2 d-block", def.label));
 
     function titleCase(str) {
         if (!str) return "";
-        return String(str).toLowerCase().replace(/(^|\s)\S/g, function(L) {
-            return L.toUpperCase();
-        });
+        return String(str).toLowerCase().replace(/(^|\s)\S/g, (L) => L.toUpperCase());
     }
-    // 3. Render Daftar Informasi secara Horizontal (Label : Nilai)
-    const list = el("div", "gis-popup-list d-flex flex-column gap-1");
+
+    // 3. Render Daftar Informasi Menggunakan Tabel HTML (Dijamin Titik Dua Sejajar Sempurna)
+    const table = document.createElement("table");
+    table.style.cssText = "width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:4px;";
 
     Object.entries(cfg.fields || {}).forEach(([key, labelText]) => {
         const v = props[key];
         if (v == null || v === "") return;
 
-        // Membuat wadah baris (menggunakan align-items-start agar rapi jika teks membungkus ke bawah)
-        const row = el("div", "d-flex justify-content-between align-items-start gap-2 small mb-1");
+        const cleanLabel = String(labelText).replace(":", "").trim();
 
-        // Bagian Label di sebelah kiri (flex-shrink-0 agar label tidak ikut menyusut/tertekan)
-        const lbl = el("span", "fw-semibold flex-shrink-0", labelText + " : ");
+        const tr = document.createElement("tr");
 
-        // Bagian Nilai/Value di sebelah kanan (menggunakan text-break agar teks panjang turun ke bawah dengan rapi di layar kecil)
-        const val = el("span", "text-end text-break", titleCase(v));
+        // Kolom 1: Label (Lebar otomatis menyesuaikan teks terpanjang)
+        const tdLabel = document.createElement("td");
+        tdLabel.style.cssText = "color:var(--muted); padding:2px 0; white-space:nowrap; vertical-align:top;";
+        tdLabel.textContent = cleanLabel;
 
-        row.append(lbl, val);
-        list.appendChild(row);
+        // Kolom 2: Titik Dua (Lurus sejajar vertikal ke bawah)
+        const tdColon = document.createElement("td");
+        tdColon.style.cssText = "color:var(--muted); padding:2px 6px; vertical-align:top; text-align:center;";
+        tdColon.textContent = ":";
+
+        // Kolom 3: Nilai / Value
+        const tdVal = document.createElement("td");
+        tdVal.style.cssText = "color:var(--ink); padding:2px 0; vertical-align:top; word-break:break-word;";
+        tdVal.textContent = titleCase(v);
+
+        tr.append(tdLabel, tdColon, tdVal);
+        table.appendChild(tr);
     });
 
-    box.appendChild(list);
+    box.appendChild(table);
     return box;
 }
+
 map.on("click", (e) => {
     const f = hit(e.point);
     if (!f) return;
@@ -606,9 +613,17 @@ document.querySelectorAll("[data-action]").forEach((btn) =>
                 btn.blur();
                 break;
             case "toggle-pitch": {
-                const to3D = map.getPitch() < 10;
-                map.easeTo({ pitch: to3D ? 60 : 0, duration: 800 });
-                btn.classList.toggle("active", to3D);
+                const isFlat = map.getPitch() < 10;
+
+                if (isFlat) {
+                    // Mengubah kemiringan ke 50 derajat agar mode 3D aktif dan bisa diputar
+                    map.easeTo({ pitch: 50, bearing: 30, duration: 800 });
+                    btn.classList.add("active");
+                } else {
+                    // Mengembalikan ke posisi datar jika diklik kembali
+                    map.easeTo({ pitch: 0, bearing: 0, duration: 800 });
+                    btn.classList.remove("active");
+                }
                 break;
             }
             case "collapse":
@@ -648,3 +663,106 @@ init().catch((err) => {
         root.textContent =
             "Katalog layer gagal dimuat. Periksa route /gis/katalog.";
 });
+
+/* =====================================================
+   KONTROL TAMPILAN MIRING (3D)
+   ===================================================== */
+const btnTogglePitch = document.getElementById("btnTogglePitch");
+const pitchControlBox = document.getElementById("pitchControlBox");
+const pitchRange = document.getElementById("pitchRange");
+const pitchVal = document.getElementById("pitchVal");
+
+if (btnTogglePitch) {
+    btnTogglePitch.addEventListener("click", (e) => {
+        if (e.target.tagName === "INPUT" || e.target.tagName === "SPAN" || e.target.closest(".range")) {
+            return;
+        }
+
+        const isHidden = pitchControlBox.style.display === "none" || pitchControlBox.style.display === "";
+        const targetOpen = isHidden;
+
+        pitchControlBox.style.display = targetOpen ? "block" : "none";
+
+        const targetPitch = targetOpen ? 50 : 0;
+        map.easeTo({ pitch: targetPitch, duration: 800 });
+
+        if (targetOpen && pitchRange && pitchRange.value == "0") {
+            pitchRange.value = "50";
+            if (pitchVal) pitchVal.textContent = "50°";
+        } else if (!targetOpen) {
+            if (pitchRange) pitchRange.value = "0";
+            if (pitchVal) pitchVal.textContent = "0°";
+        }
+    });
+}
+
+if (pitchRange) {
+    pitchRange.addEventListener("input", (e) => {
+        const pitch = parseFloat(e.target.value);
+        if (pitchVal) pitchVal.textContent = pitch + "°";
+        map.setPitch(pitch);
+    });
+
+    map.on("pitch", () => {
+        const currentPitch = Math.round(map.getPitch());
+        if (pitchRange && document.activeElement !== pitchRange) {
+            pitchRange.value = currentPitch;
+        }
+        if (pitchVal && document.activeElement !== pitchRange) {
+            pitchVal.textContent = currentPitch + "°";
+        }
+    });
+}
+
+
+/* =====================================================
+   KONTROL ELEVASI GUNUNG / TERRAIN 3D (PERSENTASE)
+   ===================================================== */
+const terrainCardBox = document.getElementById("terrainCardBox");
+const terrainExagBox = document.getElementById("terrainExagBox");
+const terrainExagRange = document.getElementById("terrainExagRange");
+const terrainExagVal = document.getElementById("terrainExagVal");
+
+let isTerrainActive = false;
+
+if (terrainCardBox) {
+    terrainCardBox.addEventListener("click", (e) => {
+        if (e.target.tagName === "INPUT" || e.target.tagName === "SPAN" || e.target.closest(".range")) {
+            return;
+        }
+
+        const isHidden = terrainExagBox.style.display === "none" || terrainExagBox.style.display === "";
+        const targetOpen = isHidden;
+
+        terrainExagBox.style.display = targetOpen ? "block" : "none";
+        isTerrainActive = targetOpen;
+
+        if (!map.getSource("mapbox-dem")) {
+            map.addSource("mapbox-dem", {
+                type: "raster-dem",
+                url: "mapbox://mapbox.mapbox-terrain-dem-v1",
+                tileSize: 512,
+                maxzoom: 14,
+            });
+        }
+
+        if (targetOpen) {
+            const rawVal = parseFloat(terrainExagRange ? terrainExagRange.value : 100);
+            map.setTerrain({ source: "mapbox-dem", exaggeration: rawVal / 100 });
+        } else {
+            map.setTerrain(null);
+        }
+    });
+}
+
+if (terrainExagRange) {
+    terrainExagRange.addEventListener("input", (e) => {
+        const percent = parseInt(e.target.value);
+        if (terrainExagVal) terrainExagVal.textContent = percent + "%";
+
+        const exag = percent / 100;
+        if (isTerrainActive) {
+            map.setTerrain({ source: "mapbox-dem", exaggeration: exag });
+        }
+    });
+}

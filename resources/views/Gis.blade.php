@@ -287,7 +287,11 @@
       {{-- Panel 1: Layer. #layerTree diisi otomatis dari /gis/catalog (groups > categories > layers) --}}
       <section class="gis-pane active" data-pane="layer" aria-label="Layer peta">
         <header class="gis-pane-head">
-          <h1>WebGIS Desa Alat</h1>
+          <div class="d-flex align-items-center gap-2 mb-3">
+        {{-- Logo Desa di samping judul utama WebGIS --}}
+        <img src="{{ asset('img/Logo/HST.png') }}" alt="Logo Desa Alat" style="width: 36px; height: 36px; object-fit: contain;">
+        <h1 class="h4 mb-0 fw-bold text-dark">WebGIS Desa Alat</h1>
+        </div>
           <div class="gis-pane-actions">
             <button type="button" class="btn btn-sm btn-outline-primary" data-action="show-all">Tampilkan semua</button>
             <button type="button" class="btn btn-sm btn-outline-secondary" data-action="hide-all">Sembunyikan semua</button>
@@ -311,11 +315,11 @@
             <span class="gis-bm-swatch" style="background:linear-gradient(135deg,#e8e4d8 0 45%,#a8d4e6 45% 70%,#f6cf65 70%)"></span>
             <span><strong>Jalan</strong></span>
           </label>
-          <label class="gis-basemap">
-            <input class="form-check-input m-0" type="radio" name="basemap" value="mapbox://styles/mapbox/satellite-streets-v12">
-            <span class="gis-bm-swatch" style="background:linear-gradient(135deg,#2f4a2b,#5b6d3c 55%,#1f3b4d)"></span>
-            <span><strong>Satelit</strong></span>
-          </label>
+            <label class="gis-basemap">
+                <input class="form-check-input m-0" type="radio" name="basemap" value="mapbox://styles/mapbox/satellite-v9">
+                <span class="gis-bm-swatch" style="background:linear-gradient(135deg,#2f4a2b,#5b6d3c 55%,#1f3b4d)"></span>
+                <span><strong>Satelit</strong></span>
+            </label>
           <label class="gis-basemap">
             <input class="form-check-input m-0" type="radio" name="basemap" value="mapbox://styles/mapbox/outdoors-v12">
             <span class="gis-bm-swatch" style="background:linear-gradient(135deg,#d8e8c4 0 50%,#b9d8a0 50% 75%,#9cc4dc 75%)"></span>
@@ -334,18 +338,49 @@
         </div>
       </section>
 
-      {{-- Panel 3: Tampilan (reset-view, toggle-pitch) --}}
+
+{{-- Panel 3: Tampilan Peta --}}
       <section class="gis-pane" data-pane="tampilan" aria-label="Tampilan peta">
         <header class="gis-pane-head">
           <h2>Tampilan</h2>
         </header>
         <div class="gis-pane-body">
-          <button type="button" class="btn btn-outline-primary gis-tool" data-action="reset-view">
+
+          {{-- 1. Kembali ke Desa Alat --}}
+          <button type="button" class="btn btn-outline-primary gis-tool mb-3" data-action="reset-view">
             <i class="bi bi-bullseye"></i><span>Kembali ke Desa Alat</span>
           </button>
-          <button type="button" class="btn btn-outline-primary gis-tool" data-action="toggle-pitch">
-            <i class="bi bi-box"></i><span>Tampilan miring (3D)</span>
-          </button>
+
+            {{-- 2. Kotak Tampilan Miring (3D) - Ditambahkan pointer-events: none pada teks/ikon --}}
+          <div class="btn btn-outline-primary gis-tool px-3 py-2 mb-3 text-start d-block h-auto" style="cursor: pointer;" id="btnTogglePitch">
+            <div class="d-flex align-items-center gap-2 fw-medium text-dark" style="pointer-events: none;">
+              <i class="bi bi-box fs-5 text-primary"></i><span>Tampilan miring (3D)</span>
+            </div>
+
+            <div class="range mt-2 pt-2 border-top border-secondary-subtle" id="pitchControlBox" style="display: none;" onclick="event.stopPropagation();">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="small text-muted">Kemiringan Peta</span>
+                <span id="pitchVal" class="small fw-bold text-dark" style="font-size: 0.95rem;">0°</span>
+              </div>
+              <input type="range" id="pitchRange" class="form-range" min="0" max="85" value="0" step="1">
+            </div>
+          </div>
+
+            {{-- 3. Kotak Elevasi Gunung (Terrain) - Ditambahkan pointer-events: none di pembungkus teks agar seluruh area bisa diklik --}}
+          <div class="btn btn-outline-primary gis-tool px-3 py-2 mb-3 text-start d-block h-auto" style="cursor: pointer;" id="terrainCardBox">
+            <div class="d-flex align-items-center gap-2 fw-medium text-dark" style="pointer-events: none;">
+              <i class="bi bi-layers fs-5 text-primary"></i><span>Elevasi Gunung (Terrain)</span>
+            </div>
+
+            <div class="range mt-2 pt-2 border-top border-secondary-subtle" id="terrainExagBox" style="display: none;" onclick="event.stopPropagation();">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="small text-muted">Skala Ketinggian</span>
+                <span id="terrainExagVal" class="small fw-bold text-dark" style="font-size: 0.95rem;">100%</span>
+              </div>
+              <input type="range" id="terrainExagRange" class="form-range" min="0" max="175" value="100" step="10">
+            </div>
+          </div>
+
         </div>
       </section>
 
