@@ -250,7 +250,7 @@ return [
             'geometry' => 'polygon',
             'rank'     => 'polygon',
             'file'     => 'Batas Desa.geojson',
-            'visible'  => false,
+            'visible'  => true,
             'style'    => ['color' => '#3ca22a', 'fill_opacity' => 0.4, 'width' => 2],
             'popup'    => [
                 'title'  => 'Batas',
@@ -266,7 +266,7 @@ return [
             'geometry' => 'polygon',
             'rank'     => 'polygon',
             'file'     => 'NDVI.geojson',
-            'visible'  => true,
+            'visible'  => false,
             'style'      => [
                 'color'        => 'from_geojson',
                 'fill_opacity' => 0.6,

@@ -648,7 +648,7 @@
             z-index: 5
         }
 
-        .slide {
+.slide {
             position: absolute;
             inset: 0;
             margin: 0;
@@ -661,8 +661,21 @@
         .bg {
             position: absolute;
             inset: 0;
+            /* Gradient tetap dipertahankan di bawah sebagai latar cadangan/fallback jika gambar lambat dimuat */
             background: radial-gradient(ellipse at 30% 25%, var(--a), transparent 62%), linear-gradient(135deg, var(--b), #06130f);
-            transform: scale(1.02)
+            transform: scale(1.02);
+            overflow: hidden; /* Mencegah gambar keluar dari batas container saat di-scale */
+        }
+
+        /* --- TAMBAHKAN KODE INI UNTUK GAMBARNYA --- */
+        .bg img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;     /* Membuat gambar menutupi area secara proporsional tanpa gepeng */
+            object-position: center; /* Memusatkan area gambar */
+            z-index: 1;            /* Menempatkan gambar di atas background gradient */
         }
 
         .bg span {
@@ -679,7 +692,8 @@
         .shade {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(6, 19, 15, .35), transparent 30%, rgba(6, 19, 15, .55) 62%, rgba(6, 19, 15, .95))
+            background: linear-gradient(180deg, rgba(6, 19, 15, .35), transparent 30%, rgba(6, 19, 15, .55) 62%, rgba(6, 19, 15, .95));
+            z-index: 2; /* Pastikan shade berada di atas gambar tapi di bawah teks */
         }
 
         .cap {
@@ -814,7 +828,7 @@
 
         .dots {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             border-top: 1px solid rgba(198, 167, 106, .35)
         }
 

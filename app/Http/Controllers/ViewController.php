@@ -43,6 +43,12 @@ class ViewController extends Controller
         ]);
     }
 
+    public function loginPage() {
+        return view('master/login', [
+            "title" => "Login",
+        ]);
+    }
+
 }
 
 

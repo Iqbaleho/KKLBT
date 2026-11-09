@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
         <title> {{ $title }} | Desa Alat</title>
         <meta name="description" content="Website Desa Alat | Kecamatan Hantakan">
+        <link rel="icon" href="{{ asset('img/Logo/HST.png') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500&display=swap"
             rel="stylesheet">
