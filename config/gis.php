@@ -227,7 +227,7 @@ return [
             ],
         ],
 
-                'Jalan' => [
+        'Jalan' => [
             'label'    => 'Jalan Desa',
             'category' => 'transportasi',
             'geometry' => 'line',
@@ -294,58 +294,14 @@ return [
             'visible'  => false,
             'style'      => [
                 'color'        => 'from_geojson',
-                'fill_opacity' => 0.6,
+                'fill_opacity' => 0.7,
                 'width'        => 1
             ],
             'popup'    => [
                 'title'  => 'Kemiringan Lereng',
                 'fields' => [
-                    'klasifikasi' => 'Relief',
-                    'KL_'=> 'Persen Lereng',
-                    'Luas' => 'Luas Area',
-                ],
-            ],
-        ],
-
-        'Ketinggi' => [
-            'label'    => 'Ketinggian',
-            'category' => 'sig',
-            'geometry' => 'polygon',
-            'rank'     => 'polygon',
-            'file'     => 'Ketinggian.geojson',
-            'visible'  => false,
-            'style'      => [
-                'color'        => 'from_geojson',
-                'fill_opacity' => 0.6,
-                'width'        => 1
-            ],
-            'popup'    => [
-                'title'  => 'Ketinggian',
-                'fields' => [
-                    'ketinggian' => 'Beda Tinggi',
-                    'klasifikasi'=> 'Relief',
-                    'Luas' => 'Luas Area',
-                ],
-            ],
-        ],
-
-         'Tutplah' => [
-            'label'    => 'Tutupan Lahan (supervised classification) 2020',
-            'category' => 'sig',
-            'geometry' => 'polygon',
-            'rank'     => 'polygon',
-            'file'     => 'Tuplah20.geojson',
-            'visible'  => false,
-            'style'      => [
-                'color'        => 'from_geojson',
-                'fill_opacity' => 0.6,
-                'width'        => 1
-            ],
-            'popup'    => [
-                'title'  => 'Tutupan Lahan',
-                'fields' => [
-                    'Keterangan' => 'Keterangan',
-                    'Luas' => 'Luas Area',
+                    'klasifikasi' =>'Klasifikasi Lereng',
+                    'Luas' => 'Luas Keseluruhan',
                 ],
             ],
         ],

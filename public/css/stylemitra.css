@@ -136,15 +136,19 @@
         }
 
         .ph {
-            background: linear-gradient(135deg, var(--sage), #6f8a78);
-            display: grid;
-            place-items: center;
-            text-align: center;
-            color: rgba(255, 255, 255, .92);
-            font-size: 11px;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            padding: 12px
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;  /* Mengunci rasio bentuk landscape */
+            overflow: hidden;      /* Memotong gambar yang melebihi batas frame */
+            padding: 0;
+        }
+
+        .ph img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;     /* Gambar otomatis mengisi penuh frame landscape tanpa terdistorsi */
+            object-position: center;
+            display: block;
         }
 
         .note {
@@ -499,10 +503,6 @@
         .card:hover {
             transform: translateY(-6px);
             box-shadow: 0 24px 48px -24px rgba(18, 61, 50, .4)
-        }
-
-        .card .ph {
-            aspect-ratio: 16/10
         }
 
         .card .in {

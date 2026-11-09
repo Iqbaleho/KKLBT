@@ -113,16 +113,6 @@ function buildLayerSpecs(id, def) {
                     "fill-opacity": s.fill_opacity ?? 0.4,
                 },
             },
-            {
-                ...common,
-                id: id + "-outline",
-                type: "line",
-                paint: {
-                    "line-color": s.outline_color || (s.color === "from_geojson" ? "#ffffff" : color),
-                    "line-width": s.width ?? 2,
-                    "line-opacity": 1,
-                },
-            },
         ];
     }
     if (def.geometry === "line") {

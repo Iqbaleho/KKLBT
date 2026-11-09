@@ -29,3 +29,4 @@ Route::get('/gis/catalog', [GisController::class, 'catalog'])->name('gis.catalog
 Route::get('gis/data/{id}', [GisController::class, 'geojson'])->where('id', '[A-Za-z0-9_-]+')->name('gis.geojson');
 Route::get('/gis/data/{layerName}', [GisController::class, 'getDataLayer']);
 
+Route::get('/loginPage', [ViewController::class, 'loginPage'])->name('loginPage');
