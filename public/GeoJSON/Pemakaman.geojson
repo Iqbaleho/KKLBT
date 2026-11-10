@@ -1,0 +1,30 @@
+{
+    "type": "FeatureCollection",
+    "name": "Toponimi",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Pemakaman Khusus",
+                "REMARK": "Pemakaman Khusus",
+                "LCODE": "GH0020",
+                "FTYPE": "Permakaman",
+                "foto": "Pemakaman.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.474102127000037,
+                    -2.630321221999964,
+                    57.119800000000396
+                ]
+            }
+        }
+    ]
+}
