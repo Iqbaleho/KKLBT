@@ -73,7 +73,7 @@ Website resmi Desa Alat ini dikembangkan sebagai sarana informasi dan komunikasi
             </div>
             <div class="card">
                 <div class="ph" >
-                   <img src="{{ asset("img/Galeri/Kades.webp") }}" alt="">
+                   <img src="{{ asset("img/Galeri/.webp") }}" alt="">
                 </div>
             </div>
         </div>
@@ -175,24 +175,24 @@ Website resmi Desa Alat ini dikembangkan sebagai sarana informasi dan komunikasi
             <h2>Tiga Peminatan</h2>
             <div class="grid">
                 <article class="card reveal">
-                    <div class="ph">[Foto: LMB]</div>
-                    <div class="in"><span class="tag">Lingkungan &amp; Manajemen Bencana</span>
-                        <h3>LMB</h3>
-                        <p>[Ringkasan]</p><a href="{{ route('lmb') }}">Selengkapnya →</a>
-                    </div>
-                </article>
-                <article class="card reveal">
-                    <div class="ph">[Foto: PPW]</div>
-                    <div class="in"><span class="tag">Perencanaan Pengembangan Wilayah</span>
-                        <h3>PPW</h3>
-                        <p>[Ringkasan]</p><a href="{{ route('ppw') }}">Selengkapnya →</a>
-                    </div>
-                </article>
-                <article class="card reveal">
                     <div class="ph">[Foto: SIG]</div>
                     <div class="in"><span class="tag">Sistem Informasi Geografis</span>
                         <h3>SIG</h3>
-                        <p>[Ringkasan]</p><a href="{{ route('sig') }}">Selengkapnya →</a>
+                        <p>[Ringkasan]</p><a href="{{ route('mitradesa') }}#sig">Selengkapnya →</a>
+                    </div>
+                </article>
+                <article class="card reveal">
+                    <div class="ph">[Foto: LMB]</div>
+                    <div class="in"><span class="tag">Lingkungan Manajemen Bencana</span>
+                        <h3>LMB</h3>
+                        <p>[Ringkasan]</p><a href="{{ route('mitradesa') }}#lmb">Selengkapnya →</a>
+                    </div>
+                </article>
+                                <article class="card reveal">
+                    <div class="ph">[Foto: PPW]</div>
+                    <div class="in"><span class="tag">Perencanaan Pembangunan Wilayah</span>
+                        <h3>PPW</h3>
+                        <p>[Ringkasan]</p><a href="{{ route('mitradesa') }}#ppw">Selengkapnya →</a>
                     </div>
                 </article>
             </div>
