@@ -255,7 +255,9 @@ return [
             'popup'    => [
                 'title'  => 'Batas',
                 'fields' => [
-                    'WADMKD' => 'Alat',
+                    'NAME_2' => 'Kabupaten',
+                    'NAME_3' => 'Kecamatan',
+                    'Total' => 'Luas Wilayah (Ha)'
                 ],
             ],
         ],
@@ -263,7 +265,7 @@ return [
                                             // Sistem Informasi Geografis
 
         'NDVI' => [
-            'label'    => 'NDVI (INDEX VEGETASI)',
+            'label'    => 'NDVI (Indeks Vegetasi)',
             'category' => 'sig',
             'geometry' => 'polygon',
             'rank'     => 'polygon',
@@ -275,7 +277,7 @@ return [
                 'width'        => 1
             ],
             'popup'    => [
-                'title'  => 'Index Vegetasi',
+                'title'  => 'Indeks Vegetasi',
                 'fields' => [
                     'Nilai' => 'Nilai NDVI',
                     'Kelas' => 'Kelas Vegetasi',
@@ -301,7 +303,7 @@ return [
                 'title'  => 'Kemiringan Lereng',
                 'fields' => [
                     'klasifikasi' =>'Klasifikasi Lereng',
-                    'Luas' => 'Luas Keseluruhan',
+                    'Luas' => 'Luas Area',
                 ],
             ],
         ],
