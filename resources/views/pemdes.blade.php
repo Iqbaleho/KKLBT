@@ -22,7 +22,7 @@
                 <a href="#visi-misi">Visi &amp; Misi</a>
                 <a href="#pemerintah-desa">Pemerintah Desa</a>
                 <a href="#bpd">BPD</a>
-                <a href="#pkk-section">PKK</a>
+                <a href="#pkk">PKK</a>
             </div>
         </nav>
 
@@ -234,15 +234,17 @@
         </section>
 
 <!-- STRUKTUR TIM PENGGERAK PKK -->
-<section id="pkk-section">
+<section id="pkk" class="pkk">
     <div class="wrap">
-            <span class="eyebrow">04. TIM PENGGERAK PKK</span>
+        <div class="head"><span class="eyebrow">04 · Tim Penggerak dan Kesejahteraan keluarga</span>
+            <span class="eyebrow">TIM PENGGERAK PKK</span>
             <h2>Struktur TP PKK Desa Alat</h2>
             <p>Kecamatan Hantakan, Kabupaten Hulu Sungai Tengah</p>
         </div>
 
         <div class="pkk-tree">
-            <!-- LEVEL 1: Dewan Penyantun - Ketua & Wakil - Fasilitator -->
+            
+            <!-- LEVEL 1: PIMPINAN & DEWAN PEMBINA -->
             <div class="lvl">PIMPINAN & DEWAN PEMBINA</div>
             <div class="pkk-top-tier">
                 <div class="side-box">
@@ -253,13 +255,17 @@
 
                 <div class="leader-group">
                     <div class="node">
-                        <div class="ph">[FOTO]</div>
+                        <div class="ph">
+                        <img src="{{ asset('img/PKK/kamariah.jpeg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                        </div>
                         <b>KAMARIYAH</b>
                         <small>KETUA</small>
                     </div>
                     <div class="link"></div>
                     <div class="node">
-                        <div class="ph">[FOTO]</div>
+                        <div class="ph">
+                        <img src="{{ asset('img/PKK/misdawati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                        </div>
                         <b>MISDAWATI</b>
                         <small>WAKIL KETUA</small>
                     </div>
@@ -274,72 +280,88 @@
 
             <div class="link stem"></div>
 
-            <!-- LEVEL 2: Bendahara & Sekretaris -->
+            <!-- LEVEL 2: BENDAHARA & SEKRETARIS (Ukuran Kartu Sama dengan Ketua) -->
             <div class="lvl">BENDAHARA & SEKRETARIS</div>
             <div class="pkk-mid-tier">
-                <!-- Bendahara Stack -->
+                <!-- Kolom Bendahara -->
                 <div class="stack-col">
-                    <div class="node inline-node">
-                        <div class="ph-sm">[FOTO]</div>
-                        <div class="node-info">
-                            <b>MUSLINA</b>
-                            <small>BENDAHARA I</small>
+                    <div class="node">
+                        <div class="ph">
+                        <img src="{{ asset('img/PKK/muslina.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
                         </div>
+                        <b>MUSLINA</b>
+                        <small>BENDAHARA I</small>
                     </div>
-                    <div class="node inline-node">
-                        <div class="ph-sm">[FOTO]</div>
-                        <div class="node-info">
-                            <b>Belum Terisi</b>
-                            <small>BENDAHARA II</small>
+                    <div class="node">
+                        <div class="ph">
+                        <img src="{{ asset('img/PKK/kosong.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
                         </div>
+                        <b>Belum Terisi</b>
+                        <small>BENDAHARA II</small>
                     </div>
                 </div>
 
-                <!-- Sekretaris Stack -->
+                <!-- Kolom Sekretaris -->
                 <div class="stack-col">
-                    <div class="node inline-node">
-                        <div class="ph-sm">[FOTO]</div>
-                        <div class="node-info">
-                            <b>HELWI MUTAZAH</b>
-                            <small>SEKRETARIS UMUM</small>
+                    <div class="node">
+                        <div class="ph">
+                        <img src="{{ asset('img/PKK/helai.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
                         </div>
+                        <b>HELWI MUTAZAH</b>
+                        <small>SEKRETARIS UMUM</small>
                     </div>
-                    <div class="node inline-node">
-                        <div class="ph-sm">[FOTO]</div>
-                        <div class="node-info">
-                            <b>SALAMIAH</b>
-                            <small>SEKRETARIS T.U.</small>
+                    <div class="node">
+                        <div class="ph">
+                        <img src="{{ asset('img/PKK/salamiah.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
                         </div>
+                        <b>SALAMIAH</b>
+                        <small>SEKRETARIS T.U.</small>
                     </div>
                 </div>
             </div>
 
             <div class="link stem"></div>
 
-            <!-- LEVEL 3: Pokja I - IV -->
+            <!-- LEVEL 3: KELOMPOK KERJA (POKJA) -->
             <div class="lvl">KELOMPOK KERJA (POKJA)</div>
             <div class="pokja-grid">
+                
                 <!-- POKJA I -->
                 <div class="pokja-card">
                     <div class="pokja-header">POKJA I</div>
                     <div class="pokja-body">
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/sitihadijah.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>SITI HADIJAH</b>
                             <small>KETUA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/misri.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>MISRIYANTI</b>
                             <small>WAKIL KETUA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/saudah.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>SAUDAH</b>
                             <small>SEKRETARIS</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/-.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            x</div>
                             <b>ARMIYATI</b>
                             <small>ANGGOTA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/ruhani.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>ROHANI</b>
                             <small>ANGGOTA</small>
                         </div>
@@ -350,23 +372,38 @@
                 <div class="pokja-card">
                     <div class="pokja-header">POKJA II</div>
                     <div class="pokja-body">
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/maimunah.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>MAIMUNAH</b>
                             <small>KETUA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/rokayah.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>RUKAYAH</b>
                             <small>WAKIL KETUA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/jamilah.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>JAMILAH</b>
                             <small>SEKRETARIS</small>
                         </div>
-                        <div class="pokja-item">
-                            <b>ABD. MALIK</b>
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/malik.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
+                            <b>ABDUL MALIK</b>
                             <small>ANGGOTA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/sumiati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>SUMIATI</b>
                             <small>ANGGOTA</small>
                         </div>
@@ -377,23 +414,38 @@
                 <div class="pokja-card">
                     <div class="pokja-header">POKJA III</div>
                     <div class="pokja-body">
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/asnawati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>ASNAWATI</b>
                             <small>KETUA</small>
                         </div>
-                        <div class="pokja-item">
-                            <b>RABIATUL A</b>
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/rabiatul.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
+                            <b>RABIATUL ADAWIYAH</b>
                             <small>WAKIL KETUA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/widia.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>WIDIA WATI</b>
                             <small>SEKRETARIS</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/jumiati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>JUMIATI</b>
                             <small>ANGGOTA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/rusmayati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>RUSMAYATI</b>
                             <small>ANGGOTA</small>
                         </div>
@@ -404,42 +456,48 @@
                 <div class="pokja-card">
                     <div class="pokja-header">POKJA IV</div>
                     <div class="pokja-body">
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/norhayati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>NORHAYATI</b>
                             <small>KETUA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/kamariati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>KAMARIATI</b>
                             <small>WAKIL KETUA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/mahriati.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>MAHRIATI</b>
                             <small>SEKRETARIS</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/wahdiah.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>WAHDIAH</b>
                             <small>ANGGOTA</small>
                         </div>
-                        <div class="pokja-item">
+                        <div class="node pokja-node">
+                            <div class="ph">
+                            <img src="{{ asset('img/PKK/novita.jpg') }}" alt="Foto LMB" style="width:100%;height:auto">
+                            </div>
                             <b>NOVITA H</b>
                             <small>ANGGOTA</small>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </section>
-
-        <section class="cta">
-            <div class="wrap">
-                <span class="eyebrow">Lanjutkan Menjelajah</span>
-                <h2>Kenali desa lebih dekat.</h2>
-                <div class="btns"><a class="btn fill" href="{{ route('beranda') }}">Profil Desa</a><a class="btn"
-                        href="{{ route('informasiDesa') }}">Informasi Desa</a><a class="btn" href="{{ route('beranda') }}">← Kembali ke
-                        Beranda</a></div>
-            </div>
-        </section>
     </main>
 
     @endsection
