@@ -1,0 +1,131 @@
+{
+    "type": "FeatureCollection",
+    "name": "Toponimi",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Masjid Al-Munawarah",
+                "REMARK": "Masjid",
+                "LCODE": "GF0020",
+                "FTYPE": "Peribadatan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.473085654000101,
+                    -2.632128941999952,
+                    57.984800000005635
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "SD Negeri 2 Desa Alat",
+                "REMARK": "Pendidikan Dasar",
+                "LCODE": "GE0020",
+                "FTYPE": "Pendidikan dan IPTEK"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.473695605000103,
+                    -2.630395561999933,
+                    57.981199999994715
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Pemakaman Khusus",
+                "REMARK": "Pemakaman Khusus",
+                "LCODE": "GH0020",
+                "FTYPE": "Permakaman"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.474102127000037,
+                    -2.630321221999964,
+                    57.119800000000396
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Jembatan Gantung",
+                "REMARK": "Jembatan",
+                "LCODE": "CA0100",
+                "FTYPE": "Transportasi"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.479403783000066,
+                    -2.626087601999927,
+                    61.482199999998556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Masjid Darul Thalibin",
+                "REMARK": "Masjid",
+                "LCODE": "GF0020",
+                "FTYPE": "Peribadatan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.478935992000061,
+                    -2.626045361999957,
+                    62.651800000006915
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Poskesdes Desa Alat",
+                "REMARK": "Poliklinik/Polindes/Posyandu",
+                "LCODE": "GI0020",
+                "FTYPE": "Sarana Kesehatan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.478777071000081,
+                    -2.625359381999942,
+                    67.796400000006543
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Kepala Desa Alat",
+                "REMARK": "Kantor Kepala Desa",
+                "LCODE": "GD0020",
+                "FTYPE": "Pemerintahan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.478745301000117,
+                    -2.625275311999928,
+                    69.092600000003586
+                ]
+            }
+        }
+    ]
+}
